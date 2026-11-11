@@ -1,0 +1,101 @@
+{
+  "actions": [],
+  "creation": "2026-11-12 00:00:00",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "provider",
+    "model",
+    "auto_accept",
+    "confidence_threshold",
+    "never_auto_fields",
+    "fields_by_doctype",
+    "retention_days",
+    "data_leaves_site",
+    "max_file_bytes"
+  ],
+  "fields": [
+    {
+      "fieldname": "provider",
+      "fieldtype": "Data",
+      "label": "Provider"
+    },
+    {
+      "fieldname": "model",
+      "fieldtype": "Data",
+      "label": "Model"
+    },
+    {
+      "default": "0",
+      "description": "Off by default. The gate fails closed: with this off, every extraction waits for a person.",
+      "fieldname": "auto_accept",
+      "fieldtype": "Check",
+      "label": "Auto Accept Above Threshold"
+    },
+    {
+      "default": "0.85",
+      "description": "Only meaningful when Auto Accept is on. A policy that auto-accepts with no threshold would accept everything.",
+      "fieldname": "confidence_threshold",
+      "fieldtype": "Float",
+      "label": "Confidence Threshold"
+    },
+    {
+      "description": "One fieldname per line. These are never auto-accepted, whatever the confidence.",
+      "fieldname": "never_auto_fields",
+      "fieldtype": "Small Text",
+      "label": "Never Auto Accept"
+    },
+    {
+      "description": "One line per DocType: <code>Sales Invoice: grand_total, customer, due_date</code>",
+      "fieldname": "fields_by_doctype",
+      "fieldtype": "Small Text",
+      "label": "Fields By DocType"
+    },
+    {
+      "default": "30",
+      "description": "How long a draft is kept before it is pruned. Drafts are an audit trail, not a business record.",
+      "fieldname": "retention_days",
+      "fieldtype": "Int",
+      "label": "Retention Days"
+    },
+    {
+      "default": "0",
+      "description": "Document text is sent to a provider. This must be set before any extraction runs — the operator says it out loud rather than inheriting a default.",
+      "fieldname": "data_leaves_site",
+      "fieldtype": "Check",
+      "label": "Data Leaves Site"
+    },
+    {
+      "default": "8388608",
+      "description": "The most bytes one extraction will read. 8 MiB.",
+      "fieldname": "max_file_bytes",
+      "fieldtype": "Int",
+      "label": "Max File Bytes"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-11-12 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Document Intelligence MCP",
+  "name": "Document Intelligence MCP Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}

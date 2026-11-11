@@ -1,0 +1,126 @@
+{
+  "actions": [],
+  "creation": "2026-11-12 00:00:00",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "file",
+    "target_doctype",
+    "target_name",
+    "status",
+    "confidence",
+    "model_version",
+    "prompt_version",
+    "content_hash",
+    "purpose",
+    "rejection_reason",
+    "prior_values",
+    "fields"
+  ],
+  "fields": [
+    {
+      "fieldname": "file",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "File"
+    },
+    {
+      "fieldname": "target_doctype",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Target DocType",
+      "options": "DocType"
+    },
+    {
+      "fieldname": "target_name",
+      "fieldtype": "Data",
+      "label": "Target Name"
+    },
+    {
+      "default": "draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "draft\npromoted\nreverted\nrejected\ndiscarded"
+    },
+    {
+      "description": "Null when any field is unresolved. A draft holding one ambiguous total is not \"mostly confident\".",
+      "fieldname": "confidence",
+      "fieldtype": "Float",
+      "label": "Confidence"
+    },
+    {
+      "fieldname": "model_version",
+      "fieldtype": "Data",
+      "label": "Model Version"
+    },
+    {
+      "fieldname": "prompt_version",
+      "fieldtype": "Data",
+      "label": "Prompt Version"
+    },
+    {
+      "description": "A hash of the input, so re-uploading the same file updates rather than duplicates.",
+      "fieldname": "content_hash",
+      "fieldtype": "Data",
+      "label": "Content Hash"
+    },
+    {
+      "fieldname": "purpose",
+      "fieldtype": "Small Text",
+      "label": "Purpose"
+    },
+    {
+      "fieldname": "rejection_reason",
+      "fieldtype": "Small Text",
+      "label": "Rejection Reason"
+    },
+    {
+      "description": "What the target's fields were before promotion, so a revert is a real inverse.",
+      "fieldname": "prior_values",
+      "fieldtype": "Code",
+      "label": "Prior Values"
+    },
+    {
+      "fieldname": "fields",
+      "fieldtype": "Table",
+      "label": "Fields",
+      "options": "Extraction Field"
+    }
+  ],
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2026-11-12 00:00:00",
+  "modified_by": "Administrator",
+  "module": "Document Intelligence MCP",
+  "name": "Extraction Draft",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "Document Intelligence MCP User",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "read": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
